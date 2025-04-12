@@ -1628,7 +1628,7 @@ entry(schema_completion_crates, {
 entry(schema_completion_crates, {
     name = "sort_by",
     type = STRING_TYPE,
-    default = "downloads",
+    default = "relevance",
     description = [[
         The sort order of the crates.
 
