@@ -222,6 +222,8 @@
 ---@class CrateCompletionConfig
 ---@field enabled boolean
 ---@field min_chars integer
+---@field sort_by string
+---@field match_first_char boolean
 ---@field max_results integer
 
 ---@class NullLsConfig
@@ -438,6 +440,8 @@
 ---@class crates.UserCrateCompletionConfig
 ---@field public enabled? boolean
 ---@field public min_chars? integer
+---@field public sort_by? string
+---@field public match_first_char? boolean
 ---@field public max_results? integer
 
 ---@class crates.UserNullLsConfig

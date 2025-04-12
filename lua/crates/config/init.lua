@@ -1626,6 +1626,27 @@ entry(schema_completion_crates, {
     ]],
 })
 entry(schema_completion_crates, {
+    name = "sort_by",
+    type = STRING_TYPE,
+    default = "downloads",
+    description = [[
+        The sort order of the crates.
+
+        Valid values: `alphabetical`, `relevance`, `downloads`, `recent-downloads`, `recent-updates`, `new`.
+        Defaults to `relevance` if `q` is set, otherwise `alphabetical`.
+    ]],
+})
+
+entry(schema_completion_crates, {
+    name = "match_first_char",
+    type = BOOLEAN_TYPE,
+    default = true,
+    description = [[
+        If set, only return crates with names that start with the given letter.
+        (ignored if `all_keywords` or `keyword` are set).
+    ]],
+})
+entry(schema_completion_crates, {
     name = "max_results",
     type = INTEGER_TYPE,
     default = 8,

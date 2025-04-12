@@ -215,12 +215,19 @@ local function fetch_search(name, callbacks)
         return
     end
 
+    local match_char = state.cfg.completion.crates.match_first_char
+
     local url = string.format(
-        "%s/crates?q=%s&per_page=%s",
+        "%s/crates?q=%s&per_page=%s&sort=%s",
         API_ENDPOINT,
         name,
-        state.cfg.completion.crates.max_results
+        state.cfg.completion.crates.max_results,
+        state.cfg.completion.crates.sort_by
     )
+
+    if state.cfg.completion.crates.match_first_char then
+        url = url .. '&letter=' .. name:sub(1, 1)
+    end
 
     ---@param json_str string?
     ---@param cancelled boolean
