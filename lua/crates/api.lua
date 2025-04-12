@@ -215,8 +215,6 @@ local function fetch_search(name, callbacks)
         return
     end
 
-    local match_char = state.cfg.completion.crates.match_first_char
-
     local url = string.format(
         "%s/crates?q=%s&per_page=%s&sort=%s",
         API_ENDPOINT,
